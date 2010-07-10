@@ -163,7 +163,7 @@ module Paperclip
     end
 
     def logger #:nodoc:
-      ActiveRecord::Base.logger
+      Rails.logger
     end
 
     def logging? #:nodoc:
