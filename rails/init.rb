@@ -1,2 +1,4 @@
-require 'paperclip/railtie'
-Paperclip::Railtie.insert
+if defined? ActiveRecord::Base
+  require 'paperclip/railtie'
+  Paperclip::Railtie.insert
+end

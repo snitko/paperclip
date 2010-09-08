@@ -15,10 +15,13 @@ module Paperclip
     end
   end
 
-  class Railtie
-    def self.insert
-      ActiveRecord::Base.send(:include, Paperclip)
-      File.send(:include, Paperclip::Upfile)
+  if defined? ActiveRecord::Base
+    class Railtie
+      def self.insert
+        ActiveRecord::Base.send(:include, Paperclip)
+        File.send(:include, Paperclip::Upfile)
+      end
     end
   end
+
 end
